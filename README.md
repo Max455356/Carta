@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
+ 
 /* ═══════════════════════════════════
    ROOT & BODY
 ═══════════════════════════════════ */
@@ -20,9 +20,9 @@
   --burn: rgba(28,10,1,0.72);
   --wax: #8b0d0d;
 }
-
+ 
 html { height: 100%; }
-
+ 
 body {
   min-height: 100%;
   background: #080503;
@@ -37,7 +37,7 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-
+ 
 /* Vignette */
 body::before {
   content:'';
@@ -45,7 +45,7 @@ body::before {
   background:radial-gradient(ellipse at center,transparent 15%,rgba(0,0,0,.65) 65%,rgba(0,0,0,.96) 100%);
   pointer-events:none;z-index:0;
 }
-
+ 
 /* Candle glow */
 .glow {
   position:fixed;inset:0;pointer-events:none;z-index:1;
@@ -55,7 +55,7 @@ body::before {
 @keyframes flicker{
   0%{opacity:.45}25%{opacity:1}55%{opacity:.6}80%{opacity:.88}100%{opacity:.72}
 }
-
+ 
 /* Floating dust */
 .dust{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
 .dp{
@@ -68,7 +68,7 @@ body::before {
   8%{opacity:1}92%{opacity:.55}
   100%{transform:translateY(-8vh) translateX(var(--dx)) scale(1.3);opacity:0}
 }
-
+ 
 /* ═══════════════════════════════════
    ENVELOPE SCREEN (initial state)
 ═══════════════════════════════════ */
@@ -84,7 +84,7 @@ body::before {
   transform:scale(.85) translateY(30px);
   pointer-events:none;
 }
-
+ 
 .env-wrap {
   position:relative;
   width:min(290px,84vw);
@@ -94,7 +94,7 @@ body::before {
   animation:hb 2.8s ease-in-out infinite;
 }
 .env-wrap.stop{animation:none;pointer-events:none}
-
+ 
 @keyframes hb{
   0%,100%{transform:scale(1) rotate(-.5deg)}
   14%{transform:scale(1.05) rotate(.3deg)}
@@ -102,14 +102,14 @@ body::before {
   42%{transform:scale(1.04) rotate(.2deg)}
   70%{transform:scale(1) rotate(-.3deg)}
 }
-
+ 
 /* Envelope body */
 .env-body {
   position:relative;
   width:100%;padding-bottom:65%;
   transform-style:preserve-3d;
 }
-
+ 
 .env-bg {
   position:absolute;inset:0;
   border-radius:3px 3px 8px 8px;
@@ -138,11 +138,11 @@ body::before {
     inset 0 0 6px 3px rgba(15,4,0,.85);
   pointer-events:none;
 }
-
+ 
 /* Crease lines SVG */
 .env-svg{position:absolute;inset:0;pointer-events:none;z-index:3}
 .env-svg svg{width:100%;height:100%}
-
+ 
 /* Flap */
 .env-flap{
   position:absolute;top:0;left:0;right:0;height:57%;
@@ -162,7 +162,7 @@ body::before {
   pointer-events:none;
 }
 .env-flap.open{transform:rotateX(-185deg)}
-
+ 
 /* Wax seal */
 .seal-wrap{
   position:absolute;top:50%;left:50%;
@@ -211,7 +211,7 @@ body::before {
   text-shadow:0 1px 3px rgba(0,0,0,.95);
   position:relative;z-index:2;user-select:none;
 }
-
+ 
 /* Tap hint */
 .tap-hint{
   position:absolute;bottom:-42px;left:50%;transform:translateX(-50%);
@@ -221,7 +221,7 @@ body::before {
   animation:pu 2.3s ease-in-out infinite;
 }
 @keyframes pu{0%,100%{opacity:.25}50%{opacity:1}}
-
+ 
 /* ═══════════════════════════════════
    LETTER SCREEN (revealed state)
 ═══════════════════════════════════ */
@@ -241,7 +241,7 @@ body::before {
   opacity:1;
   pointer-events:all;
 }
-
+ 
 /* ═══════════════════════════════════
    THE AGED PAPER LETTER
 ═══════════════════════════════════ */
@@ -249,7 +249,7 @@ body::before {
   position:relative;
   width:100%;
   max-width:520px;
-
+ 
   /* ─── AGED PAPER BASE ─── */
   background:
     /* Coffee ring stain — top right */
@@ -278,10 +278,10 @@ body::before {
       #ccaa50 80%, #c49c4c 89%,
       #d8b76a 100%
     );
-
+ 
   border-radius:2px 5px 3px 4px;
   padding:clamp(22px,6vw,42px) clamp(20px,5.5vw,38px) clamp(28px,8vw,52px);
-
+ 
   /* Heavy burnt/aged shadow */
   box-shadow:
     6px 8px 0 rgba(0,0,0,.1),
@@ -290,14 +290,14 @@ body::before {
     0 3px 14px rgba(0,0,0,.58),
     inset 0 0 40px 20px rgba(42,16,2,.34),
     inset 0 0 10px 5px rgba(22,8,0,.56);
-
+ 
   /* Slight tilt — authentic */
   transform:rotate(-.4deg);
-
+ 
   /* Animation: slides in from below */
   animation: none;
 }
-
+ 
 /* Paper fiber texture overlay */
 .paper::before {
   content:'';
@@ -308,7 +308,7 @@ body::before {
     repeating-linear-gradient(150deg,transparent,transparent 18px,rgba(52,26,2,.025) 18px,rgba(52,26,2,.025) 19px);
   pointer-events:none;z-index:0;
 }
-
+ 
 /* Fold crease lines */
 .fold-h {
   position:absolute;left:0;right:0;top:34%;height:2px;
@@ -320,7 +320,7 @@ body::before {
   background:linear-gradient(90deg,transparent 0%,rgba(68,33,4,.16) 8%,rgba(85,46,6,.26) 50%,rgba(68,33,4,.16) 92%,transparent 100%);
   pointer-events:none;z-index:1;
 }
-
+ 
 /* Burnt edges */
 .paper-burn {
   position:absolute;inset:0;border-radius:inherit;
@@ -331,16 +331,16 @@ body::before {
     inset -4px -4px 16px 8px rgba(32,12,2,.34);
   pointer-events:none;z-index:2;
 }
-
+ 
 /* Foxing / aging spots */
 .fox {
   position:absolute;border-radius:50%;pointer-events:none;z-index:1;
   background:radial-gradient(circle,rgba(82,40,6,.42) 0%,transparent 70%);
 }
-
+ 
 /* ─── LETTER CONTENT ─── */
 .letter-inner { position:relative;z-index:3; }
-
+ 
 /* Header */
 .lh {
   text-align:center;
@@ -360,7 +360,7 @@ body::before {
   font-size:clamp(8px,2.2vw,10px);
   color:rgba(72,36,7,.42);letter-spacing:5px;text-transform:uppercase;
 }
-
+ 
 /* Body */
 .lb {
   font-family:'Caveat',cursive;
@@ -376,7 +376,7 @@ body::before {
 }
 .lb em  { font-style:normal; color:rgba(22,10,2,.72); }
 .lb strong { font-weight:700; color:#0c0602; }
-
+ 
 .lb .question {
   display:block;
   margin-top:clamp(10px,3vw,16px);
@@ -387,7 +387,7 @@ body::before {
   text-indent:0!important;
   font-style:italic;
 }
-
+ 
 /* Divider */
 .divider {
   text-align:center;
@@ -396,7 +396,7 @@ body::before {
   letter-spacing:7px;
   margin:clamp(10px,3vw,16px) 0;
 }
-
+ 
 /* Footer */
 .lf {
   margin-top:clamp(14px,4vw,22px);
@@ -423,7 +423,7 @@ body::before {
   font-size:clamp(14px,3.6vw,18px);
   letter-spacing:7px;margin-top:5px;
 }
-
+ 
 /* Roses / ambient */
 .rose {
   position:fixed;pointer-events:none;z-index:5;
@@ -435,7 +435,7 @@ body::before {
 }
 .rose.show{opacity:.65}
 @keyframes rf{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(7deg)}}
-
+ 
 /* ─── PARA ENTRADA DE LA CARTA ─── */
 .paper.entering {
   animation: slideIn 1.1s cubic-bezier(.22,.68,0,1.2) forwards;
@@ -444,7 +444,7 @@ body::before {
   0%  { opacity:0; transform:rotate(-.4deg) translateY(60px) scale(.96); }
   100%{ opacity:1; transform:rotate(-.4deg) translateY(0) scale(1); }
 }
-
+ 
 /* Párrafos con entrada de tinta */
 .lb p, .lb .question, .lf, .lh {
   opacity:0;
@@ -458,12 +458,12 @@ body::before {
 .lb .question    { animation-delay:1.82s; }
 .divider         { opacity:0; animation:ink .85s ease 1.95s forwards; }
 .lf              { animation-delay:2.1s; }
-
+ 
 @keyframes ink {
   from{opacity:0;transform:translateY(6px);filter:blur(.8px)}
   to  {opacity:1;transform:translateY(0);filter:blur(0)}
 }
-
+ 
 /* ─── Estado oculto inicial de la carta ─── */
 #letter-screen.hidden-init * {
   animation-play-state: paused;
@@ -471,16 +471,16 @@ body::before {
 </style>
 </head>
 <body>
-
+ 
 <div class="dust" id="dust"></div>
 <div class="glow"></div>
-
+ 
 <!-- ROSES -->
 <div class="rose" id="r1" style="top:6%;left:2%;animation-duration:4.4s;animation-delay:0s;">🥀</div>
 <div class="rose" id="r2" style="top:8%;right:3%;animation-duration:3.8s;animation-delay:.6s;">🥀</div>
 <div class="rose" id="r3" style="bottom:8%;left:3%;animation-duration:4.9s;animation-delay:1s;">🌹</div>
 <div class="rose" id="r4" style="bottom:10%;right:3%;animation-duration:4.2s;animation-delay:1.5s;">🥀</div>
-
+ 
 <!-- ══════════════════════════════
      ENVELOPE SCREEN
 ══════════════════════════════ -->
@@ -488,7 +488,7 @@ body::before {
   <div class="env-wrap" id="envWrap">
     <div class="tap-hint">· toca para abrir ·</div>
     <div class="env-body">
-
+ 
       <!-- Envelope background -->
       <div class="env-bg">
         <div class="env-svg">
@@ -500,31 +500,31 @@ body::before {
           </svg>
         </div>
       </div>
-
+ 
       <!-- Flap -->
       <div class="env-flap" id="flap"></div>
-
+ 
       <!-- Seal -->
       <div class="seal-wrap" id="sealWrap">
         <div class="seal"><span class="seal-txt">LOVE</span></div>
       </div>
-
+ 
     </div><!-- /env-body -->
   </div><!-- /env-wrap -->
 </div><!-- /env-screen -->
-
+ 
 <!-- ══════════════════════════════
      LETTER SCREEN (full page)
 ══════════════════════════════ -->
 <div id="letter-screen" class="hidden-init">
-
+ 
   <!-- THE LETTER -->
   <div class="paper" id="thePaper">
     <!-- Aged overlays -->
     <div class="fold-h"></div>
     <div class="fold-h2"></div>
     <div class="paper-burn"></div>
-
+ 
     <!-- Foxing / aging spots scattered -->
     <div class="fox" style="width:22px;height:14px;top:9%;left:6%;transform:rotate(22deg)"></div>
     <div class="fox" style="width:13px;height:9px;top:18%;right:10%;transform:rotate(-14deg)"></div>
@@ -536,42 +536,42 @@ body::before {
     <div class="fox" style="width:15px;height:10px;top:82%;left:18%;transform:rotate(42deg);opacity:.65"></div>
     <div class="fox" style="width:7px;height:5px;top:91%;right:14%;transform:rotate(-18deg);opacity:.55"></div>
     <div class="fox" style="width:12px;height:8px;top:38%;left:3%;transform:rotate(28deg);opacity:.5"></div>
-
+ 
     <div class="letter-inner">
-
+ 
       <!-- Header -->
       <div class="lh">
         <span class="lh-date">En algún lugar del tiempo…</span>
         <span class="lh-sub">— para ti —</span>
       </div>
-
+ 
       <!-- Body -->
       <div class="lb">
         <p>Sé que tal vez no vengo del mismo lugar del que tú vienes, ni tengo las costumbres o modos del medio en que tú estás. Pero lo único de lo que tengo certeza es de <em>lo que yo siento</em>, y lo que llegué a sentir por ti — que ha sido lo más lindo y sincero que he llegado a sentir por alguien <strong>en mucho tiempo.</strong></p>
-
+ 
         <p>No me lastimas ni nada por el estilo. Al contrario, me das <strong>paz y tranquilidad</strong> en mi vida, la cual es un caos. Eres como ese <em>rayito de luz en la oscuridad.</em> Yo lo quiero realmente intentar contigo, a pesar de los riesgos que — créeme — en mi vida he tomado muchos… y tú vales <strong>totalmente</strong> la pena.</p>
-
+ 
         <p>No me importa que sea a escondidas; la verdad eso me da igual, mientras en tu corazón y ojos pueda estar yo, porque tú <em>sí</em> estás en el mío. Podemos ser como Ulises y Renata, pero <strong>sin que te mueras,</strong> paro banda. Tampoco te voy a decir que todo va a ser perfecto, pero con problemas, días buenos y días malos — lo quiero intentar y lograr <em>contigo.</em></p>
-
+ 
         <p>Ya estamos grandes, ya sabemos lo que queremos. Y yo <strong>te quiero</strong> y te elijo a ti para que seas mi compañera en esto llamado vida. No te digo amor eterno ni nada de eso, pero sí <em>luchar cada día</em> para que esto dure un día más. He aprendido a luchar por las cosas que valen la pena y <strong>no guardarme lo que siento.</strong></p>
-
+ 
         <span class="question">¿Pero tú también quieres eso?</span>
       </div>
-
+ 
       <div class="divider">✦ &nbsp; ♡ &nbsp; ✦</div>
-
+ 
       <!-- Footer -->
       <div class="lf">
         <span class="lf-pre">Con todo lo que soy,</span>
         <span class="lf-name">Siempre tuyo ♡</span>
         <span class="lf-hearts">♥ · ♥ · ♥</span>
       </div>
-
+ 
     </div><!-- /letter-inner -->
   </div><!-- /paper -->
-
+ 
 </div><!-- /letter-screen -->
-
+ 
 <script>
 /* ── Dust particles ── */
 (function(){
@@ -587,7 +587,7 @@ body::before {
     c.appendChild(p);
   }
 })();
-
+ 
 /* ── Envelope interaction ── */
 const envScreen   = document.getElementById('env-screen');
 const letterScreen= document.getElementById('letter-screen');
@@ -596,21 +596,21 @@ const sealWrap    = document.getElementById('sealWrap');
 const envWrap     = document.getElementById('envWrap');
 const roses       = [1,2,3,4].map(n=>document.getElementById('r'+n));
 let opened = false;
-
+ 
 function openIt(){
   if(opened)return;
   opened=true;
   envWrap.classList.add('stop');
-
+ 
   // 1. Seal pops
   setTimeout(()=>sealWrap.classList.add('pop'), 0);
-
+ 
   // 2. Flap opens
   setTimeout(()=>flap.classList.add('open'), 600);
-
+ 
   // 3. Envelope fades out
   setTimeout(()=>envScreen.classList.add('hide'), 1600);
-
+ 
   // 4. Letter screen appears — full page, scrollable
   setTimeout(()=>{
     letterScreen.classList.remove('hidden-init');
@@ -621,12 +621,13 @@ function openIt(){
     document.body.style.overflow='auto';
   }, 1850);
 }
-
+ 
 envWrap.addEventListener('click', openIt);
 envWrap.addEventListener('touchstart', e=>{ e.preventDefault(); openIt(); }, {passive:false});
-
+ 
 // Body scroll locked until letter reveals
 document.body.style.overflow='hidden';
 </script>
 </body>
 </html>
+ 
